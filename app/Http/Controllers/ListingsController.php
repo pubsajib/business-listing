@@ -42,7 +42,7 @@ class ListingsController extends Controller{
     public function edit($id)
     {
         $listing = Listing::find($id);
-        return view('listings.edit')->with('listing', $listing);
+        return view('listings.edit', compact('listing'));
     }
     public function update(Request $request, $id)
     {
@@ -62,14 +62,14 @@ class ListingsController extends Controller{
         $listing->user_id = auth()->user()->id;
 
         $listing->save();
-
-        return redirect('/dashboard')->with('success', 'Listing Updated');
+        flash('Listing Updated')->success()->important();
+        return redirect('/dashboard');
     }
     public function destroy($id)
     {
         $listing = Listing::find($id);
         $listing->delete();
-
-        return redirect('/dashboard')->with('success', 'Listing Removed');
+        flash('Listing Removed')->success()->important();
+        return redirect('/dashboard');
     }
 }

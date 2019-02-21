@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">{{$listing->name}} <a href="/listings" class="pull-right btn btn-default btn-xs">Go Back</a></div>
+                <div class="panel-heading">{{$listing->name}} <a href="/listings" class="pull-right btn btn-default btn-sm">Go Back</a></div>
 
                 <div class="panel-body">
                     <ul class="list-group">
